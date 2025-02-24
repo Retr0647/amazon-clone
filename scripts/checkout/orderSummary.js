@@ -107,7 +107,6 @@ export function renderOrderSummary() {
             removeFromCart(productId);
 
             renderOrderSummary();
-            renderCheckoutHeader();
             renderPaymentSummary();
         });
     });
