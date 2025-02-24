@@ -87,6 +87,7 @@ export function loadCart(fun) {
 
 export function loadCartFetch() {
 	const promise = fetch('https://supersimplebackend.dev/cart').then((response) => {
-		return promise;
+		return response;
 	})
+	return promise;
 }
