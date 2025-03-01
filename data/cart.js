@@ -34,7 +34,7 @@ export function addToCart(productId, quantity) {
   	});
 
   	if (matchingItem) {
-    	matchingItem.quantity += Number(quantity);
+    	matchingItem.quantity += quantity;
   	}
   	else {
     	cart.push({
