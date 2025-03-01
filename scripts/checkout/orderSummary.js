@@ -105,6 +105,7 @@ export function renderOrderSummary() {
             const productId = link.dataset.productId;
             removeFromCart(productId);
 
+            renderCheckoutHeader()
             renderOrderSummary();
             renderPaymentSummary();
         });
@@ -115,6 +116,7 @@ export function renderOrderSummary() {
             const {productId, deliveryOptionId} = element.dataset;
             updateDeliveryOption(productId, deliveryOptionId);
 
+            renderCheckoutHeader()
             renderOrderSummary();
             renderPaymentSummary();
         });

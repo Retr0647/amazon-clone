@@ -2,7 +2,7 @@ import {orders} from "../data/orders.js";
 import {getProduct, loadProductsFetch} from "../data/products.js";
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 import formatCurrency from "./utils/money.js";
-import { addToCart } from "../data/cart.js";
+import { addToCart, updateCartQuantity } from "../data/cart.js";
 
 export async function renderOrders() {
     await loadProductsFetch();
@@ -38,6 +38,8 @@ export async function renderOrders() {
                 </div>
             </div>
         `;
+
+        updateCartQuantity();
     });
 
     function productsListHTML(order) {
@@ -63,7 +65,7 @@ export async function renderOrders() {
                     <div class="product-quantity">
                         Quantity: ${productDetails.quantity}
                     </div>
-                    <button class="buy-again-button button-primary js-buy-again" data-product-id="${product.id}">
+                    <button class="buy-again-button button-primary js-buy-again" data-product-id="${product.id}" data-quantity="${productDetails.quantity}">
                         <img class="buy-again-icon" src="images/icons/buy-again.png">
                         <span class="buy-again-message">Buy it again</span>
                     </button>
@@ -85,7 +87,7 @@ export async function renderOrders() {
 
     document.querySelectorAll('.js-buy-again').forEach((button) => {
         button.addEventListener('click', () => {
-            addToCart(button.dataset.productId);
+            addToCart(button.dataset.productId, Number(button.dataset.quantity));
 
             button.innerHTML = 'Added';
             setTimeout(() => {
@@ -94,6 +96,8 @@ export async function renderOrders() {
                     <span class="buy-again-message">Buy it again</span>
                 `;
             }, 1000);
+
+            updateCartQuantity();
         });
     });  
 }

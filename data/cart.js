@@ -34,7 +34,7 @@ export function addToCart(productId, quantity) {
   	});
 
   	if (matchingItem) {
-    	matchingItem.quantity += quantity;
+    	matchingItem.quantity += Number(quantity);
   	}
   	else {
     	cart.push({
@@ -45,6 +45,12 @@ export function addToCart(productId, quantity) {
   	}
 
 	saveToStorage();
+}
+
+export function updateCartQuantity() {
+    const cartQuantity = calculateCartQuantity();
+
+    document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
 }
 
 export function removeFromCart(productId) {
