@@ -23,7 +23,7 @@ The idea of this project was to learn JavaScript and practice HTML and CSS.
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-username/amazon-clone.git
+   git clone https://github.com/Retr0647/amazon-clone.git
    ```
 2. Navigate to the project directory:
    ```bash
