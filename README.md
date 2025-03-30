@@ -29,7 +29,7 @@ The idea of this project was to learn JavaScript and practice HTML and CSS.
    ```bash
    cd amazon-clone
    ```
-3. Open `index.html` in your web browser.
+3. Open `amazon.html` in your web browser.
 
 ## 📄 Documentation
 Detailed documentation for all JavaScript functions and project structure can be found in the **`docs/`** folder.
