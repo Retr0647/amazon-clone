@@ -1,41 +1,48 @@
-# Amazon Website Clone
+# 🛒 Amazon Website Clone
 
 ![Badge](https://img.shields.io/badge/status-active-brightgreen)
 
-# Project Description
+## Project Description
 
-This project is a visual and interactive clone of Amazon Website. It is build with HTML, CSS and JavaScript. 
+A fully responsive and interactive clone of the Amazon website, built as part of a **22-hour course** 
+to practice web development skills.
 The project is originally from a youtube course video for JavaScript from a youtuber SuperSimpleDev.
 Here is a link for this course: https://www.youtube.com/watch?v=EerdGm-ehJQ&t=15s
-I followed this 22 hours long course and made it from scratch in VS Code. 
 The idea of this project was to learn JavaScript and practice HTML and CSS.
 
-# Features 
+## 🚀 Features 
 
-1. Main page with all the products, which are imported from a web server, that you can add to the cart in
-  different quantities and a working search-bar.
-2. Second page which is the checkout page, where you can remove or add more items to the cart and you can
-   see when the order is gonna arive as well as how much it will cost with or without the delivery.
-3. Third page which is the orders page, where you can see how far along your order in the delivery process.
-4. A testing environment that uses Jasmine to check most of the functions that are used in the project.
-5. A full documentation of all the functions explaining what they are doing.
+- A visually accurate replica of the Amazon homepage.
+- Fully interactive elements, including buttons, search bar, and navigation.
+- Responsive design for desktop
+- JavaScript-powered dynamic elements (e.g., product carousel, interactive buttons).
+- Testing environment for most functions in the code
+- Organized **documentation** detailing all functions in the code.
 
-## Installation
+## 📦 Installation
 
-```bash
-git clone https://github.com/Retr0647/amazon-clone.git
-cd your-repo
-npm install
-npm start
-```
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/your-username/amazon-clone.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd amazon-clone
+   ```
+3. Open `index.html` in your web browser.
 
-# Usage 
+## 📄 Documentation
+Detailed documentation for all JavaScript functions and project structure can be found in the **`docs/`** folder.
 
-After installing the project on your device you can open the main site to use it freely.
+## 🎯 Usage
+Explore the interactive elements to see how JavaScript enhances the user experience. The project serves as a great reference for structuring a functional and responsive website.
 If you want to make the tests for the functions you will need to open the HTML file for
-Jasmine titled "tests.html". To see what each function does check the documentation.
+Jasmine titled "tests.html" in the **`tests`** folder.
+
+## 📜 License
+This project is open-source and available under the **MIT License**.
 
 # Contact
 
-For support, contact kuba@eskrytka.net.pl.
+For any questions, feel free to reach out via [GitHub Issues](https://github.com/your-username/amazon-clone/issues) or kuba@eskrytka.net.pl.
 
