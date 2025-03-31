@@ -1,0 +1,42 @@
+# 📖 Checkout Header - JavaScript Documentation
+
+## 📌 Overview
+This JavaScript file is responsible for rendering the **Checkout Page Header**, which includes:
+- Displaying the **Amazon logo** with a link back to the homepage.
+- Showing the total number of items in the cart.
+- Including a **secure checkout lock icon**.
+
+---
+
+## 📜 Functions
+
+### 🔹 `function renderCheckoutHeader()`
+**Purpose:**
+- Generates and updates the **Checkout Page Header** with cart details.
+
+**Parameters:**
+- None
+
+**Returns:**
+- None (directly modifies the DOM to update the checkout header)
+
+**Functionality:**
+1. Initializes `cartQuantity` to **0**.
+2. Iterates over the `cart` array to sum up the total number of items.
+3. Constructs the **HTML structure** for the checkout header, including:
+   - **Amazon logo** linking back to the homepage.
+   - **Cart quantity display** inside a "Checkout" label.
+   - **Secure lock icon** for checkout security indication.
+4. Injects the **generated HTML** into the `.js-checkout-header` container.
+
+---
+
+## 📦 Imported Modules
+| Module | Description |
+|---------|-------------|
+| `cart` | Contains all cart items and their quantities. |
+
+---
+
+## 📜 License
+This project is open-source and available under the **MIT License**.
