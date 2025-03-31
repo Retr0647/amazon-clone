@@ -1,0 +1,61 @@
+# 📖 Payment Summary - JavaScript Documentation
+
+> A JavaScript module that handles the rendering and functionality of the payment summary section for an e-commerce checkout page.
+
+## 📌 Overview
+
+The Payment Summary module calculates order totals, displays checkout information, and handles order submission for the checkout process. It provides a comprehensive breakdown of costs including product prices, shipping fees, and taxes, while managing the API interaction for placing orders.
+
+The function automatically:
+- Calculates all prices based on the current cart
+- Renders the HTML with proper formatting
+- Sets up event listeners for order placement
+
+## 📜 Functions
+
+### 🔹 `function renderPaymentSummary()`
+
+**Description:** Renders the complete payment summary and sets up order placement functionality.
+
+**Parameters:** None
+
+**Returns:** Void
+
+**Side Effects:**
+- Updates DOM content in the `.js-payment-summary` element
+- Sets up click event listener on the order button
+- Makes API calls when order is placed
+- Resets cart and redirects after successful order
+
+## 📦 Imported Modules
+
+This module relies on several other components:
+
+| Import | Purpose |
+|--------|---------|
+| `{cart, resetCart}` from `../../data/cart.js` | Access and manage the shopping cart |
+| `{getProduct}` from `../../data/products.js` | Retrieve product details |
+| `{getDeliveryOption}` from `../../data/deliveryOptions.js` | Get shipping information |
+| `formatCurrency` from `../utils/money.js` | Format prices as currency strings |
+| `{addOrder}` from `../../data/orders.js` | Store completed orders |
+
+### Basic Implementation
+
+```javascript
+// Import the module
+import { renderPaymentSummary } from './paymentSummary.js';
+
+// Call on page load
+document.addEventListener('DOMContentLoaded', () => {
+  renderPaymentSummary();
+});
+
+// Call after cart updates
+updateCartButton.addEventListener('click', () => {
+  // Update cart logic here...
+  renderPaymentSummary(); // Re-render with new values
+});
+```
+
+## 📜 License
+This project is open-source and available under the **MIT License**.
