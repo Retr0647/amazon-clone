@@ -1,0 +1,102 @@
+# 📖 Amazon Clone - JavaScript Documentation
+
+## 📌 Overview
+This JavaScript file powers the **Amazon Clone's product display and search functionality**. It loads products, filters them based on user search input, and handles adding items to the cart.
+
+---
+
+## 📜 Functions
+
+### 🔹 `renderProductsGrid()`
+**Purpose:**
+- Loads and displays the products dynamically on the webpage.
+- Filters products based on search input.
+- Updates the cart quantity.
+- Handles user interactions (adding products to the cart, search functionality).
+
+**Parameters:**
+- None
+
+**Returns:**
+- None (directly manipulates the DOM to display products)
+
+**Functionality:**
+1. Retrieves **search query** from the URL.
+2. Filters products based on the query (matches keywords or product name).
+3. Generates **HTML** for each product, including:
+   - Image
+   - Name
+   - Rating
+   - Price
+   - Quantity selector
+   - "Add to Cart" button
+4. Updates the cart quantity.
+5. Adds event listeners for:
+   - Adding items to the cart.
+   - Showing confirmation message when an item is added.
+   - Handling the **search bar** (redirects on search button click or Enter key press).
+
+---
+
+### 🔹 `button.addEventListener('click', () => { ... })`
+**Purpose:**
+- Handles "Add to Cart" button click event.
+- Adds the selected product and quantity to the cart.
+- Displays a confirmation message.
+
+**Parameters:**
+- None (uses `event.target.dataset` to retrieve product ID)
+
+**Returns:**
+- None (updates cart data and modifies DOM)
+
+**Functionality:**
+1. Extracts `productId` from button data attributes.
+2. Gets the selected **quantity** from the dropdown.
+3. Calls `addToCart(productId, quantity)` to update cart data.
+4. Calls `updateCartQuantity()` to refresh cart count.
+5. Displays the "Added to Cart" message for 2 seconds.
+6. Prevents duplicate timeouts for the same product.
+
+---
+
+### 🔹 `document.querySelector('.js-search-button').addEventListener('click', () => { ... })`
+**Purpose:**
+- Handles search button click to filter products.
+
+**Parameters:**
+- None
+
+**Returns:**
+- None (redirects user to filtered results page)
+
+**Functionality:**
+1. Gets search input value.
+2. Redirects the user to `amazon.html?search=<query>`.
+
+---
+
+### 🔹 `document.querySelector('.js-search-bar').addEventListener('keydown', (event) => { ... })`
+**Purpose:**
+- Triggers search when the user presses **Enter** in the search bar.
+
+**Parameters:**
+- `event` (Keydown event object)
+
+**Returns:**
+- None (redirects user to filtered results page)
+
+**Functionality:**
+1. Checks if the pressed key is **Enter**.
+2. Extracts search input.
+3. Redirects the user to `amazon.html?search=<query>`.
+
+---
+
+## 📦 Dependencies
+This file imports the following modules:
+- `cart.js`: Manages cart functionality.
+- `products.js`: Loads product data.
+
+## 📜 License
+This project is open-source and available under the **MIT License**.
