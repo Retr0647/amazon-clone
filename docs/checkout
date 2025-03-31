@@ -1,0 +1,49 @@
+# 📖 Checkout Page - JavaScript Documentation
+
+## 📌 Overview
+This JavaScript file handles the **checkout page initialization** by:
+- Fetching **product** and **cart** data.
+- Rendering checkout components (**header, order summary, payment summary**).
+- Handling **errors** in asynchronous data loading.
+
+---
+
+## 📜 Functions
+
+### 🔹 `async function loadPage()`
+**Purpose:**
+- Loads required **product** and **cart** data asynchronously.
+- Calls rendering functions to display the checkout page.
+- Handles errors gracefully.
+
+**Parameters:**
+- None
+
+**Returns:**
+- None (updates the checkout page DOM)
+
+**Functionality:**
+1. Calls `loadProductsFetch()` and `loadCartFetch()` using `Promise.all()` to fetch data in parallel.
+2. Catches and logs any errors.
+3. Calls rendering functions:
+   - `renderCheckoutHeader()` → Displays the checkout page header.
+   - `renderOrderSummary()` → Shows order details.
+   - `renderPaymentSummary()` → Displays payment information.
+
+---
+
+## 📦 Imported Modules
+| Module | Description |
+|---------|-------------|
+| `renderOrderSummary` | Renders the **order summary** on the checkout page. |
+| `renderPaymentSummary` | Displays the **payment summary** section. |
+| `renderCheckoutHeader` | Generates the **header** for the checkout page. |
+| `loadProductsFetch` | Fetches **product data** asynchronously. |
+| `loadProducts` | (Unused) Loads product data from a local source. |
+| `loadCartFetch` | Fetches **cart data** asynchronously. |
+| `loadCart` | (Unused) Loads cart data from a local source. |
+
+---
+
+## 📜 License
+This project is open-source and available under the **MIT License**.
