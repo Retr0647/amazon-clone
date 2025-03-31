@@ -1,0 +1,87 @@
+# 📖 Order Summary - JavaScript Documentation
+
+## 📌 Overview
+This JavaScript module handles the **Order Summary** rendering in a checkout system. It:
+- Displays products in the cart along with their details.
+- Allows users to update quantity or remove items.
+- Provides delivery options and dynamically updates prices and shipping dates.
+- Updates the checkout header and payment summary upon changes.
+
+---
+
+## 📜 Functions
+
+### 🔹 `function renderOrderSummary()`
+**Purpose:**
+- Generates the HTML for the order summary, including product details, delivery options, and update actions.
+
+**Parameters:**
+- None
+
+**Returns:**
+- None (Directly updates the DOM to display the order summary)
+
+**Functionality:**
+1. Iterates over `cart` to create product listings with:
+   - Name, price, image, and quantity.
+   - Delivery date and available delivery options.
+   - Buttons to update, remove, or change quantity.
+2. Calls `deliveryOptionsHTML()` to generate the delivery selection UI.
+3. Adds event listeners for:
+   - **Removing items** (`.js-delete-link` → calls `removeFromCart()`).
+   - **Changing delivery options** (`.js-delivery-option` → calls `updateDeliveryOption()`).
+   - **Updating quantities** (`.js-update-link` → enables edit mode, `.js-save-link` → updates cart).
+4. Calls `renderCheckoutHeader()` and `renderPaymentSummary()` to refresh the UI after updates.
+
+---
+
+### 🔹 `function deliveryOptionsHTML(matchingProduct, cartItem)`
+**Purpose:**
+- Generates the delivery options for each cart item.
+
+**Parameters:**
+- `matchingProduct` (Object) – The product associated with the cart item.
+- `cartItem` (Object) – The cart item containing selected delivery details.
+
+**Returns:**
+- `html` (String) – The delivery options as a formatted HTML string.
+
+**Functionality:**
+- Loops through `deliveryOptions`, creating a radio button for each.
+- Marks the selected delivery option as checked.
+- Displays the estimated delivery date and shipping cost.
+
+---
+
+### 🔹 `function handleUpdateQuantity(productId, inputElement)`
+**Purpose:**
+- Handles the process of updating an item's quantity in the cart.
+
+**Parameters:**
+- `productId` (String) – The ID of the product being updated.
+- `inputElement` (HTMLElement) – The input field where the user enters a new quantity.
+
+**Returns:**
+- None (Directly updates the cart and UI)
+
+**Functionality:**
+1. Converts user input to a number and validates it.
+2. Calls `updateQuantity()` to update the cart.
+3. Updates the displayed quantity in `.js-quantity-label-{productId}`.
+4. Refreshes the **Order Summary, Checkout Header, and Payment Summary**.
+
+---
+
+## 📦 Imported Modules
+| Module | Description |
+|---------|-------------|
+| `cart, removeFromCart, updateDeliveryOption, updateQuantity` | Handles shopping cart functionality. |
+| `products, getProduct` | Provides product data. |
+| `deliveryOptions, getDeliveryOption, calculateDeliveryDate` | Manages delivery settings. |
+| `formatCurrency` | Formats prices. |
+| `renderPaymentSummary, renderCheckoutHeader` | Updates checkout UI. |
+
+---
+
+## 📜 License
+This project is open-source and available under the **MIT License**.
