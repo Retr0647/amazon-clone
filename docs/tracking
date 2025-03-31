@@ -1,0 +1,70 @@
+# 📖 Order Tracking Page - JavaScript Documentation
+
+## 📌 Overview
+This JavaScript file is responsible for rendering the **Order Tracking Page**, allowing users to:
+- View the estimated delivery date of their ordered product.
+- See the current status of their order (Preparing, Shipped, Delivered).
+- Track progress visually through a **progress bar**.
+
+---
+
+## 📜 Functions
+
+### 🔹 `async function loadTrackingPage()`
+**Purpose:**
+- Loads and displays tracking details for a specific order and product.
+- Retrieves order and product details from the URL parameters.
+- Calculates **delivery progress** and updates the **tracking UI**.
+
+**Parameters:**
+- None
+
+**Returns:**
+- None (directly modifies the DOM to display tracking details)
+
+**Functionality:**
+1. Calls `loadProductsFetch()` to ensure product data is available.
+2. Extracts **`orderId`** and **`productId`** from the URL.
+3. Retrieves the **order and product details** using `getOrder()` and `getProduct()`.
+4. Finds the **product's specific details** within the order.
+5. Formats the **estimated delivery date** using `dayjs`.
+6. Generates **tracking page HTML**, including:
+   - Order details (name, quantity, image, delivery date).
+   - **Progress bar** that updates dynamically.
+   - **Current order status** (highlighted based on progress).
+7. Injects the HTML into the `.js-main` container.
+
+---
+
+### 🔹 `function calculateProgress(order, productDetails)`
+**Purpose:**
+- Calculates the **delivery progress** as a percentage.
+- Determines whether the order is **Preparing, Shipped, or Delivered**.
+
+**Parameters:**
+- `order` (Object) → Contains order details, including order time.
+- `productDetails` (Object) → Holds the estimated delivery time of the specific product.
+
+**Returns:**
+- `deliveryProgress` (Number) → Progress percentage (0-100%).
+
+**Functionality:**
+1. Retrieves the **current time** using `dayjs()`.
+2. Gets the **order time** and **estimated delivery time**.
+3. Calculates the **progress percentage**:
+   - `(Current Time - Order Time) / (Delivery Time - Order Time) * 100`.
+4. Returns the progress percentage for rendering in the progress bar.
+
+---
+
+## 📦 Imported Modules
+| Module | Description |
+|---------|-------------|
+| `products, getProduct, loadProductsFetch` | Manages product data retrieval. |
+| `orders, getOrder` | Manages order details. |
+| `dayjs` | Formats and manipulates dates. |
+
+---
+
+## 📜 License
+This project is open-source and available under the **MIT License**.
