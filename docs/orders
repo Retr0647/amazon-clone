@@ -1,0 +1,76 @@
+# 📖 Orders Page - JavaScript Documentation
+
+## 📌 Overview
+This JavaScript file handles the **Orders Page rendering**, which includes:
+- Loading order history.
+- Formatting order dates and costs.
+- Displaying product details within each order.
+- Enabling "Buy Again" and "Track Package" functionality.
+
+---
+
+## 📜 Functions
+
+### 🔹 `async function renderOrders()`
+**Purpose:**
+- Loads **order history** and displays each order with its products.
+- Formats **order date** and **total cost**.
+- Provides buttons to **buy again** and **track packages**.
+
+**Parameters:**
+- None
+
+**Returns:**
+- None (updates the DOM with order details)
+
+**Functionality:**
+1. Calls `loadProductsFetch()` to ensure product data is available.
+2. Loops through all **orders** and constructs HTML for:
+   - Order date, total cost, and order ID.
+   - List of products in the order.
+   - "Buy Again" button to add items back to the cart.
+   - "Track Package" button linking to tracking details.
+3. Updates cart quantity using `updateCartQuantity()`.
+4. Adds event listeners to **"Buy Again"** buttons to:
+   - Add selected products to the cart.
+   - Change button text to **"Added"** for 1 second before resetting.
+
+---
+
+### 🔹 `function productsListHTML(order)`
+**Purpose:**
+- Generates the **HTML structure** for the list of products in an order.
+
+**Parameters:**
+- `order` (Object) → The order containing product details.
+
+**Returns:**
+- `productsHTML` (String) → HTML code representing the ordered products.
+
+**Functionality:**
+1. Loops through `order.products` and retrieves each product's details using `getProduct()`.
+2. Constructs HTML for:
+   - Product image and name.
+   - Estimated delivery date (formatted with `dayjs`).
+   - Product quantity.
+   - "Buy Again" button (adds product to the cart).
+   - "Track Package" button linking to tracking details.
+3. Returns the generated HTML.
+
+---
+
+## 📦 Imported Modules
+| Module | Description |
+|---------|-------------|
+| `orders` | Contains all order data. |
+| `getProduct` | Retrieves product details based on the product ID. |
+| `loadProductsFetch` | Fetches product data asynchronously. |
+| `dayjs` | Formats order and delivery dates. |
+| `formatCurrency` | Converts price from cents to a readable currency format. |
+| `addToCart` | Adds products to the cart. |
+| `updateCartQuantity` | Updates the cart icon with the correct quantity. |
+
+---
+
+## 📜 License
+This project is open-source and available under the **MIT License**.
