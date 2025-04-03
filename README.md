@@ -8,6 +8,8 @@ A fully responsive and interactive clone of the Amazon website, built as part of
 to practice web development skills.
 The project is originally from a youtube course video for JavaScript from a youtuber SuperSimpleDev.
 Here is a link for this course: https://www.youtube.com/watch?v=EerdGm-ehJQ&t=15s
+During the course there were exercises after each module to practice and make features 
+for the site, based on the examples shown in the modules.
 The idea of this project was to learn JavaScript and practice HTML and CSS.
 
 ## 🚀 Features 
